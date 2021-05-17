@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous"></script>
+  {% load static %}
+  <script type="text/javascript" src="{% static 'chat/room/script.js' %}"></script>
+  {% load sass_tags %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% sass_src 'chat/room/style.scss' %}">
+  <title>Document</title>
+</head>
+<body class="container">
+  <div class="wrapper">
+    <div class="people-list">
+      <div class="search">
+        <input type="text" placeholder="search">
+      </div>
+      <ul id="list" class="list">
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+        <li><div class="circle"></div><div class="about">adfafdafd</div></li>
+      </ul>
+    </div>
+
+    <div class="chat">
+      <div class="chat-header">
+        <div class="circle"></div>
+        <div class="chat-about">
+          <div class="chat-with">Chat #{{ room_name }}</div>
+        </div>
+
+        <div class="float-btn">
+          <label for="home-input">
+            {% load static %}
+            <img src="{% static 'images/home.svg' %}" class="icon" alt="home" title="home">
+          </label>
+          <input type="button" id="home-input" onclick="location.href='{% url 'chat:index' %}'">
+        </div>
+
+        <div class="float-btn">
+          <label for="logout-input">
+            {% load static %}
+            <img src="{% static 'images/logout.svg' %}" class="icon" alt="logout" title="logout">
+          </label>
+          <input type="button" id="logout-input" onclick="location.href='{% url 'accounts:logout' %}'">
+        </div>
+      </div>
+
+      <div id="chat-log" class="chat-log">
+        <ul>
+
+        </ul>
+      </div>
+
+      <div class="chat-message">
+        <textarea name="message-to-send" id="message-to-send" placeholder="Type your message" rows="3"></textarea>
+      </div>
+    </div>
+  </div>
+  {{ room_name|json_script:"room_name" }}
+  <script>
+    const roomName = document.getElementById("room_name").textContent;
+  </script>
+
+  <script id="message-response-template" type="text/x-handlebars-template">
+  <li>
+    {% verbatim %}
+    <div class="message-data">
+      <div class="circle"></div>
+      <span class="message-data-name"><i class="fa fa-circle online"></i>{{name}}</span>
+      <span class="message-data-time">{{time}}</span>
+    </div>
+    <div class="message my-message">{{response}}</div>
+    {% endverbatim %}
+  </li>
+  </script>
+</body>
+</html>

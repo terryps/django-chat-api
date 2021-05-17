@@ -1,0 +1,75 @@
+:root { --baseColor: #535b69; }
+
+html { -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 100%; }
+
+:root { --bodyBackgroundColor: #1f2022; --bodyColor: var(--baseColor); --bodyFontFamily: "Open Sans"; --bodyFontSize: 0.875rem; --bodyFontWeight: 400; --bodyLineHeight: 1.5; }
+
+body { background-color: var(--bodyBackgroundColor); margin: 0; min-block-size: 100vh; color: var(--baseColor); font-family: sans-serif; font-size: var(--bodyFontSize); font-weight: var(--bodyFontWeight); line-height: var(--bodyLineHeight); }
+
+.container { display: grid; align-items: center; }
+
+.wrapper { display: flex; inline-size: 90%; block-size: 40rem; margin-inline: auto; max-inline-size: 40rem; background-color: #2f3137; }
+
+.people-list { background-color: #2f3137; flex: 1; display: flex; flex-direction: column; }
+
+.people-list .search { padding: 1.25rem; }
+
+.people-list input { inline-size: 75%; margin: 0 auto; padding: 1rem; outline: none; border: 0; border-radius: 0.25rem; font: inherit; background-color: #373d3f; color: #ddebeb; }
+
+.people-list ul { list-style: none; margin: 0; padding: 1.25rem; overflow: auto; }
+
+.people-list ul li { display: flex; padding-block: 0 1.25rem; color: #ddebeb; }
+
+.people-list ul .circle { background-color: #f5df4d; inline-size: 2.5rem; block-size: 2.5rem; border-radius: 1rem; }
+
+.people-list ul .about { margin-block: 0.5rem 0; padding-inline: 1rem; }
+
+.chat { flex: 2; display: flex; flex-direction: column; }
+
+.chat .chat-header { block-size: 4rem; padding: 2rem; }
+
+.chat .chat-header .circle { float: left; background-color: #f5df4d; inline-size: 2.5rem; block-size: 2.5rem; border-radius: 1rem; }
+
+.chat .chat-header .chat-about { display: inline-block; padding-inline: 1rem; margin-top: .75em; color: #ddebeb; }
+
+.chat .chat-header .float-btn { float: right; }
+
+.chat .chat-header input { padding: 0; border: none; }
+
+.chat .chat-header .icon { block-size: 1rem; inline-size: 1rem; }
+
+.chat .chat-log { flex: 100%; overflow-y: auto; }
+
+.chat .chat-log ul li { display: list-item; list-style: none; }
+
+.chat .chat-log .circle { display: inline-block; background-color: #f5df4d; inline-size: 2rem; block-size: 2rem; border-radius: .75rem; }
+
+.chat .chat-log .message-data-name { color: #ddebeb; font-size: 1rem; padding-inline: 0.25rem 0; position: relative; top: -20px; }
+
+.chat .chat-log .message-data-time { font-size: 0.625rem; position: relative; top: -20px; }
+
+.chat .chat-log .message { display: inline-block; word-wrap: break-word; word-break: break-all; color: #ddebeb; padding-inline: 2.5rem; line-height: 26px; font-size: 16px; border-radius: 7px; max-inline-size: 18rem; position: relative; top: -20px; }
+
+.chat .chat-message { text-align: center; padding: 1.5rem 1.5rem 1rem; }
+
+.chat .chat-message textarea { background-color: #373d3f; box-sizing: border-box; width: 100%; font: inherit; border: none; padding: 1rem; outline: none; border-radius: 0.25rem; color: #ddebeb; resize: none; }
+
+:root { --wrapperBorderRadius: 0.25rem; }
+
+.wrapper, .people-list, .chat { border-radius: var(--wrapperBorderRadius); }
+
+:root { --iconFill: var(--baseColor); --iconHoverFill: #ddebeb; }
+
+.icon { fill: var(--iconFill); filter: invert(36%) sepia(22%) saturate(321%) hue-rotate(179deg) brightness(88%) contrast(90%); margin-bottom: 1px; }
+
+label[for="home-input"]:hover .icon, label[for="logout-input"]:hover .icon { fill: var(--iconHoverFill); filter: invert(100%) sepia(45%) saturate(379%) hue-rotate(155deg) brightness(96%) contrast(92%); }
+
+:root { --scrollbarBackgroundColor: #2f3137; --scrollbarTrackBackgroundColor: #2f3137; --scrollbarThumbBackgroundColor: #1f2022; --scrollbarBorderRadius: 0.25rem; --scrollbarWidth: 6px; }
+
+#chat-log::-webkit-scrollbar-track, #list::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); border-radius: var(--scrollbarBorderRadius); background-color: var(--scrollbarTrackBackgroundColor); }
+
+#chat-log::-webkit-scrollbar, #list::-webkit-scrollbar { width: var(--scrollbarWidth); background-color: var(--scrollbarBackgroundColor); }
+
+#chat-log::-webkit-scrollbar-thumb, #list::-webkit-scrollbar-thumb { -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); border-radius: var(--scrollbarBorderRadius); background-color: var(--scrollbarThumbBackgroundColor); }
+
+/*# sourceMappingURL=style.css.map */

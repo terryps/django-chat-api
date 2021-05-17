@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load sass_tags %}
+    <link type="text/css" href="{% sass_src 'chat/entrance/style.scss' %}" rel="stylesheet">
+    <title>Chat Rooms</title>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="flex-wrapper input-field text-end">
+        <label for="logout-input">
+          {% load static %}
+          <img src="{% static 'images/logout.svg' %}" class="icon" alt="logout" title="logout">
+        </label>
+        <input type="button" id="logout-input" onclick="location.href='{% url 'accounts:logout' %}'">
+      </div>
+
+      <div class="flex-wrapper input-field">
+        <label for="room-code-input">
+          {% load static %}
+          <img src="{% static 'images/sharp.svg' %}" class="icon" alt="">
+        </label>
+        <input type="text" id="room-code-input" name="room-code" maxlength="4" placeholder="Room Code" required />
+      </div>
+
+        <div id="room-code-submit" class="flex-wrapper"><button>ENTER</button></div>
+    </div>
+  </div>
+
+    <script>
+        document.querySelector('#room-code-input').focus();
+        document.querySelector('#room-code-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-code-submit').click();
+            }
+        };
+
+        document.querySelector('#room-code-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-code-input').value;
+            if(/^\d+$/.test(roomName) && roomName.length==4) {
+                window.location.pathname = '/chat/' + roomName + '/';
+            } else {
+                document.querySelector('#room-code-input').setCustomValidity("This field can only contain 4 digit numbers.");
+                document.querySelector('#room-code-input').reportValidity();
+            }
+
+        };
+    </script>
+</body>
+</html>

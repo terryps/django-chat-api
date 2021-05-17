@@ -1,0 +1,61 @@
+:root { --baseColor: #535b69; }
+
+.container { display: grid; align-items: center; }
+
+.form-wrapper { inline-size: 90%; margin-inline: auto; max-inline-size: 20rem; }
+
+:root { --htmlFontSize: 100%; --bodyBackgroundColor: #1f2022; --bodyColor: var(--baseColor); --bodyFontFamily: "Open Sans"; --bodyFontFamilyFallback: sans-serif; --bodyFontSize: 0.875rem; --bodyFontWeight: 400; --bodyLineHeight: 1.5; }
+
+* { box-sizing: inherit; }
+
+html { box-sizing: border-box; font-size: var(--htmlFontSize); }
+
+body { background-color: var(--bodyBackgroundColor); color: var(--bodyColor); font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback); font-size: var(--bodyFontSize); font-weight: var(--bodyFontWeight); line-height: var(--bodyLineHeight); margin: 0; min-block-size: 100vh; }
+
+:root { --formInputColor: #eee; --formRadioHoverColor: #828a92; --formRadioCheckedColor: #ddebeb; --iconFill: var(--baseColor); }
+
+form { text-align: center; }
+
+input[type="radio"] { margin: 0; width: 0; visibility: hidden; }
+
+input[type="radio"] + label { margin: 10px 8px 20px 8px; font-size: 1rem; font-weight: 600; text-transform: uppercase; transition: 300ms ease; }
+
+input[type="radio"] + label:hover { color: var(--formRadioHoverColor); }
+
+input[type="radio"]:checked + label { color: var(--formRadioCheckedColor); }
+
+input:not([type="radio"]) { margin: 0; padding: 0 1rem; inline-size: 100%; max-block-size: 0; outline: 0; border: none; color: var(--formInputColor); font: inherit; opacity: 0; transition: 300ms ease; }
+
+.icons { display: none; }
+
+.icon { block-size: 0; inline-size: 1em; display: inline-block; fill: var(--iconFill); vertical-align: middle; transition: 300ms ease; }
+
+label[for="field-email"], label[for="field-username"], label[for="field-password"], label[for="field-repeat-password"] { max-block-size: 0; padding: 0 1rem; padding-inline: 1.25rem; opacity: 0; transition: 300ms ease; }
+
+[id="sign-in"]:checked ~ div.sign-in input:not([type="radio"]), [id="sign-in"]:checked ~ div.sign-in label[for="field-email"], [id="sign-in"]:checked ~ div.sign-in label[for="field-username"], [id="sign-in"]:checked ~ div.sign-in label[for="field-password"], [id="sign-in"]:checked ~ div.sign-in label[for="field-repeat-password"], [id="sign-up"]:checked ~ div.sign-up input:not([type="radio"]), [id="sign-up"]:checked ~ div.sign-up label[for="field-email"], [id="sign-up"]:checked ~ div.sign-up label[for="field-username"], [id="sign-up"]:checked ~ div.sign-up label[for="field-password"], [id="sign-up"]:checked ~ div.sign-up label[for="field-repeat-password"] { max-block-size: 20rem; padding: 1rem; opacity: 1; }
+
+[id="sign-in"]:checked ~ div.sign-in label[for="field-email"], [id="sign-in"]:checked ~ div.sign-in label[for="field-username"], [id="sign-in"]:checked ~ div.sign-in label[for="field-password"], [id="sign-in"]:checked ~ div.sign-in label[for="field-repeat-password"], [id="sign-up"]:checked ~ div.sign-up label[for="field-email"], [id="sign-up"]:checked ~ div.sign-up label[for="field-username"], [id="sign-up"]:checked ~ div.sign-up label[for="field-password"], [id="sign-up"]:checked ~ div.sign-up label[for="field-repeat-password"] { padding-inline: 1.25rem; }
+
+[id="sign-in"]:checked ~ div.sign-in .icon, [id="sign-up"]:checked ~ div.sign-up .icon { block-size: 1rem; }
+
+button { margin: 0; padding: 1rem; inline-size: 100%; outline: 0; border: none; color: inherit; font: inherit; transition: 300ms ease; }
+
+:root { --formFieldMargin: 0.875rem; --formBorderRadius: 0.25rem; --formInputBackgroundColor: #373d3f; --formInputHoverBackgroundColor: #444648; --formLabelBackgroundColor: #2f3137; --formSubmitBackgroundColor: #f5df4d; --formSubmitColor: #1f2022; --formSubmitHoverBackgroundColor: #f5e893; }
+
+form { margin: var(--formFieldMargin) 0; }
+
+.flex-wrapper { display: flex; margin: 0 var(--formFieldMargin); }
+
+[id="sign-in"]:checked ~ div.sign-in, [id="sign-up"]:checked ~ div.sign-up { margin: var(--formFieldMargin); }
+
+label[for="field-email"], label[for="field-username"], label[for="field-password"], label[for="field-repeat-password"] { background-color: var(--formLabelBackgroundColor); border-top-left-radius: var(--formBorderRadius); border-bottom-left-radius: var(--formBorderRadius); }
+
+input:not([type="radio"]) { background-color: var(--formInputBackgroundColor); border-top-right-radius: var(--formBorderRadius); border-bottom-right-radius: var(--formBorderRadius); }
+
+input:not([type="radio"]):focus, input:not([type="radio"]):hover { background-color: var(--formInputHoverBackgroundColor); }
+
+button { border-radius: var(--formBorderRadius); background-color: var(--formSubmitBackgroundColor); color: var(--formSubmitColor); font-weight: 700; }
+
+button:focus, button:hover { background-color: var(--formSubmitHoverBackgroundColor); }
+
+/*# sourceMappingURL=style.css.map */

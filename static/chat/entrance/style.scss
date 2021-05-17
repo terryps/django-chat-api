@@ -1,0 +1,166 @@
+:root {
+  --baseColor: #535b69;
+}
+
+.container {
+  display: grid;
+  align-items: center;
+  min-block-size: 100vh;
+}
+
+.wrapper {
+  inline-size: 90%;
+  margin-inline: auto;
+  max-inline-size: 20rem;
+}
+
+:root {
+  --htmlFontSize: 100%;
+
+  --bodyBackgroundColor: #1f2022;
+  --bodyColor: var(--baseColor);
+  --bodyFontFamily: "Open Sans";
+  --bodyFontFamilyFallback: sans-serif;
+  --bodyFontSize: 0.875rem;
+  --bodyFontWeight: 400;
+  --bodyLineHeight: 1.5;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--htmlFontSize);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bodyBackgroundColor);
+  color: var(--bodyColor);
+  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
+  font-size: var(--bodyFontSize);
+  font-weight: var(--bodyFontWeight);
+  line-height: var(--bodyLineHeight);
+}
+
+:root {
+  --formInputColor: #ddebeb;
+
+  --iconFill: var(--baseColor);
+}
+
+.text-end {
+  justify-content: flex-end;
+}
+
+input[type="button"] {
+  border: none;
+  padding: 0;
+}
+
+input[type="text"] {
+  margin: 0;
+  padding: 1rem;
+  outline: 0;
+  border: none;
+  inline-size: 100%;
+  max-block-size: 20rem;
+  color: var(--formInputColor);
+  font: inherit;
+  transition: 300ms ease;
+}
+
+.icon {
+  block-size: 1rem;
+  inline-size: 1em;
+  display: inline-block;
+  fill: var(--iconFill);
+  filter: invert(36%) sepia(22%) saturate(321%) hue-rotate(179deg) brightness(88%) contrast(90%);
+  margin-bottom: 1px;
+  vertical-align: middle;
+  transition: 300ms ease;
+}
+
+label[for="room-code-input"] {
+  max-block-size: 20rem;
+  padding: 1rem;
+  padding-inline: 1.25rem;
+  transition: 300ms ease;
+}
+
+button {
+  margin: 0;
+  padding: 1rem;
+  inline-size: 100%;
+  outline: 0;
+  border: none;
+  color: inherit;
+  font: inherit;
+  transition: 300ms ease;
+}
+
+:root {
+  --fieldMargin: 0.875rem;
+  --borderRadius: 0.25rem;
+
+  --inputBackgroundColor: #373d3f;
+  --inputHoverBackgroundColor: #444648;
+
+  --labelBackgroundColor: #2f3137;
+  --iconHoverFill: #ddebeb;
+
+  --submitBackgroundColor: #f5df4d;
+  --submitColor: #1f2022;
+  --submitHoverBackgroundColor: #f5e893;
+}
+
+form {
+  margin: var(--fieldMargin) 0;
+}
+
+.flex-wrapper {
+  display: flex;
+  margin: 0 var(--fieldMargin);
+}
+
+.input-field {
+  margin-bottom: var(--fieldMargin);
+}
+
+label[for="logout-input"]:hover {
+  .icon {
+    fill: var(--iconHoverFill);
+    filter: invert(100%) sepia(45%) saturate(379%) hue-rotate(155deg) brightness(96%) contrast(92%);
+  }
+}
+
+label[for="room-code-input"] {
+  background-color: var(--labelBackgroundColor);
+  border-top-left-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+}
+
+input[type="text"] {
+  background-color: var(--inputBackgroundColor);
+  border-top-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+
+  &:focus,
+  &:hover {
+    background-color: var(--inputHoverBackgroundColor);
+  }
+}
+
+button {
+  border-radius: var(--borderRadius);
+  background-color: var(--submitBackgroundColor);
+  color: var(--submitColor);
+  font-weight: 700;
+
+  &:focus,
+  &:hover {
+    background-color: var(--submitHoverBackgroundColor);
+  }
+}
