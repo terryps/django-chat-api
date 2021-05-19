@@ -41,13 +41,13 @@
    └─requirements.txt
 ```
 
-##Channel Layers
+## Channel Layers
 Use a channel layer that uses Redis as its backing store. After installing docker, to start Redis server on port 6379, run the following command:
 ```
 $ docker run -p 6379:6379 -d redis:5
 ```
 
-##Run server
+## Run server
 ```
 $ python manage.py runserver
 ```
